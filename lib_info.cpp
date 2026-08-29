@@ -17,14 +17,14 @@ struct Song {
 };
 
 struct Album {
-    map <int, Song > songs;
+    map <int, Song > songs; //key = track #
     string name;
     int time;
     int nsongs;  // optional variable but makes it easier
 };
 
 struct Artist {
-    map <string, Album > albums;
+    map <string, Album > albums; //key = artist name
     string name;
     int time;
     int nsongs;
@@ -45,7 +45,8 @@ int main(int argc, char *argv[]) {
     ifstream fin(argv[1]);
     string line;
 
-    if (fin.is_open()) { //check if file was properly openned
+    if (fin.is_open()) { //check if file was properly opened
+        map<string, Artist> artists;
         while (getline(fin, line)) {
             stringstream ss(line); //feed each line into the string stream to be parsed
             Song currSong;
@@ -64,6 +65,16 @@ int main(int argc, char *argv[]) {
                     cout << currSong.title << " " << currSong.time << " " << currArtist.name << " " 
                     << currAlbum.name << " " << genre << " " << currSong.track << endl;
                 }
+            artists[currArtist.name].albums[currAlbum.name].songs[currSong.track] = currSong;
+            artists[currArtist.name].nsongs += 1;
+            artists[currArtist.name].time += currSong.time;
+            artists[currArtist.name].albums[currAlbum.name].nsongs += 1;
+            artists[currArtist.name].albums[currAlbum.name].time += currSong.time;
+            //test output
+            cout << artists[currArtist.name].albums[currAlbum.name].songs[currSong.track].title << " " << artists[currArtist.name].nsongs 
+            << " " << artists[currArtist.name].time << " " << artists[currArtist.name].albums[currAlbum.name].nsongs << " " 
+            << artists[currArtist.name].albums[currAlbum.name].time << endl;
+
         }
     } else { 
         cout << " FAILED ";
