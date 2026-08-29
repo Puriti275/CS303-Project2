@@ -71,10 +71,9 @@ int main(int argc, char *argv[]) {
             artists[currArtist.name].albums[currAlbum.name].nsongs += 1;
             artists[currArtist.name].albums[currAlbum.name].time += currSong.time;
             //test output
-            cout << artists[currArtist.name].albums[currAlbum.name].songs[currSong.track].title << " " << artists[currArtist.name].nsongs 
+            cout << artists[currArtist.name].name << " " << artists[currArtist.name].albums[currAlbum.name].songs[currSong.track].title << " " << artists[currArtist.name].nsongs 
             << " " << artists[currArtist.name].time << " " << artists[currArtist.name].albums[currAlbum.name].nsongs << " " 
             << artists[currArtist.name].albums[currAlbum.name].time << endl;
-
         }
     } else { 
         cout << " FAILED ";
