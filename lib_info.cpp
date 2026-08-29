@@ -62,8 +62,8 @@ int main(int argc, char *argv[]) {
                 
                     currSong.time = convertTime(songTime);
                     //Test to make sure everything works cause this was lowk alot
-                    cout << currSong.title << " " << currSong.time << " " << currArtist.name << " " 
-                    << currAlbum.name << " " << genre << " " << currSong.track << endl;
+                    //cout << currSong.title << " " << currSong.time << " " << currArtist.name << " " 
+                    //<< currAlbum.name << " " << genre << " " << currSong.track << endl;
                 }
             artists[currArtist.name].albums[currAlbum.name].songs[currSong.track] = currSong;
             artists[currArtist.name].nsongs += 1;
