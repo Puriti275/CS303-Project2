@@ -65,6 +65,7 @@ int main(int argc, char *argv[]) {
                     //cout << currSong.title << " " << currSong.time << " " << currArtist.name << " " 
                     //<< currAlbum.name << " " << genre << " " << currSong.track << endl;
                 }
+            artists[currArtist.name].name = currArtist.name;    
             artists[currArtist.name].albums[currAlbum.name].songs[currSong.track] = currSong;
             artists[currArtist.name].nsongs += 1;
             artists[currArtist.name].time += currSong.time;
