@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
             cout << "Song time in seconds: " << currSong.time << "\n";
             int mins = currSong.time / 60;
             int secs = currSong.time % 60;
-            printf("Song time in mm:ss: %02d:%02d", mins, secs); //prints out the time in mm:ss format
+            printf("Song time in mm:ss: %02d:%02d \n", mins, secs); //prints out the time in mm:ss format
 
             /* Output to terminal to check if everything is being stored correctly
             cout << artists[currArtist.name].name << " " << artists[currArtist.name].albums[currAlbum.name].songs[currSong.track].title << " " << artists[currArtist.name].nsongs 
