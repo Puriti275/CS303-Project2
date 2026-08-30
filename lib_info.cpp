@@ -6,6 +6,7 @@
 #include <fstream>
 #include <map>
 #include <algorithm>
+#include <cstdio>
 
 using namespace std;
 
@@ -71,10 +72,18 @@ int main(int argc, char *argv[]) {
             artists[currArtist.name].time += currSong.time;
             artists[currArtist.name].albums[currAlbum.name].nsongs += 1;
             artists[currArtist.name].albums[currAlbum.name].time += currSong.time;
-            //test output
+
+            cout << "Song time in seconds: " << currSong.time << "\n";
+            int mins = currSong.time / 60;
+            int secs = currSong.time % 60;
+            printf("Song time in mm:ss: %02d:%02d", mins, secs); //prints out the time in mm:ss format
+
+            /* Output to terminal to check if everything is being stored correctly
             cout << artists[currArtist.name].name << " " << artists[currArtist.name].albums[currAlbum.name].songs[currSong.track].title << " " << artists[currArtist.name].nsongs 
             << " " << artists[currArtist.name].time << " " << artists[currArtist.name].albums[currAlbum.name].nsongs << " " 
-            << artists[currArtist.name].albums[currAlbum.name].time << endl;
+            << artists[currArtist.name].albums[currAlbum.name].time << endl; 
+            */
+            
         }
     } else { 
         cout << " FAILED ";
