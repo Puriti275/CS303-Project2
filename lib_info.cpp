@@ -31,7 +31,7 @@ struct Artist {
     int nsongs;
 };
 
-int convertTime(string time) { //changes song time to seconds to be converted back later
+int convertTime(string time) { //changes song time to seconds 
     int totalSeconds, minutes, seconds;
     replace(time.begin(), time.end(), ':', ' ');
     stringstream duration(time);
@@ -61,30 +61,25 @@ int main(int argc, char *argv[]) {
                     replace(currArtist.name.begin(), currArtist.name.end(),'_',' ');
                     replace(currAlbum.name.begin(), currAlbum.name.end(),'_',' ');
                 
-                    currSong.time = convertTime(songTime);
-                    //Test to make sure everything works cause this was lowk alot
-                    //cout << currSong.title << " " << currSong.time << " " << currArtist.name << " " 
-                    //<< currAlbum.name << " " << genre << " " << currSong.track << endl;
+                    currSong.time = convertTime(songTime); //call to time conversion function to convert time to seconds
                 }
+
+            //Populates map with data from the file and increment song count and time for each artist and album
             artists[currArtist.name].name = currArtist.name;    
             artists[currArtist.name].albums[currAlbum.name].songs[currSong.track] = currSong;
             artists[currArtist.name].nsongs += 1;
+
             artists[currArtist.name].time += currSong.time;
             artists[currArtist.name].albums[currAlbum.name].nsongs += 1;
             artists[currArtist.name].albums[currAlbum.name].time += currSong.time;
-
-            cout << "Song time in seconds: " << currSong.time << "\n";
-            int mins = currSong.time / 60;
-            int secs = currSong.time % 60;
-            printf("Song time in mm:ss: %02d:%02d \n", mins, secs); //prints out the time in mm:ss format
-
-            /* Output to terminal to check if everything is being stored correctly
-            cout << artists[currArtist.name].name << " " << artists[currArtist.name].albums[currAlbum.name].songs[currSong.track].title << " " << artists[currArtist.name].nsongs 
-            << " " << artists[currArtist.name].time << " " << artists[currArtist.name].albums[currAlbum.name].nsongs << " " 
-            << artists[currArtist.name].albums[currAlbum.name].time << endl; 
-            */
-            
         }
+        //TODO iterate through nested maps and output to the terminal in the proper format
+            //Use nested for loops to iterate through the maps
+            //Utilize printf to output the data in the desired format
+        //TODO double check that the file properly compiles on hydra computers via SSH
+            //test against gradescripts via vim
+            //correct any formatting discrepancies
+
     } else { 
         cout << " FAILED ";
         return 1;
