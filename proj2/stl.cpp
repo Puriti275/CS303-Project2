@@ -12,28 +12,7 @@
 
 using namespace std;
 
-// C++ Style comparison function
-bool node_number_compare(const Node *a, const Node *b) {
-    // true for Node b, false for Node a
 
-    if (a->number < b->number) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-bool node_string_compare(const Node *a, const Node *b) {
-
-    // true for Node b, false for Node a
-    if (a->string < b->string) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
 
 void stl_sort(List &l, bool numeric) {
 

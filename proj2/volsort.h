@@ -29,4 +29,26 @@ void qsort_sort(List &l, bool numeric);	// define in qsort.cpp - sort using qsor
 void merge_sort(List &l, bool numeric);	// define in merge.cpp - your implementation
 void quick_sort(List &l, bool numeric);	// define in quick.cpp - your implementation
 
+// C++ Style comparison function
+inline bool node_number_compare(const Node *a, const Node *b) {
+    // true for Node b, false for Node a
+
+    if (a->number < b->number) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+inline bool node_string_compare(const Node *a, const Node *b) {
+
+    // true for Node b, false for Node a
+    if (a->string < b->string) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 #endif
