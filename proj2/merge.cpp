@@ -19,11 +19,6 @@ if (l.head == nullptr || l.head->next == nullptr) {
         return;
     }
     l.head = msort(l.head, numeric);
-    // Divide into left and right sublists
-
-    // Conquer left and right sublists
-
-    // Combine left and right sublists
 }
 
 // msort is the recursive portion of the algorithm and calls split to divide and calls merge to conquer. It returns
@@ -92,7 +87,6 @@ Node *merge(Node *left, Node *right, bool numeric) {
     } else {
         while (left != nullptr && right != nullptr) {
             if (node_string_compare(left, right)) {     // compare the values of each node and then build a new one 
-
                 tail->next = left;
                 left = left->next;
                 tail = tail->next;
