@@ -17,11 +17,8 @@
 // };
 
 List::List() {
-    Node* head;
-    head->next = nullptr;
-    head->string = "";
-    head->number = 0;
-    size = 1;
+    head = nullptr;
+    size = 0;
 }
 
 List::~List() {
