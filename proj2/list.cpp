@@ -1,58 +1,22 @@
 #include "volsort.h"
 
-// struct Node {
-//     std::string string;
-//     int         number;
-//     Node       *next;
-// };
-
-// struct List {
-//     Node       *head;
-//     size_t      size;
-
-//     List(); 					// define in list.cpp
-//     ~List();					// define in list.cpp
-
-//     void push_front(const std::string &s);	// also define in list.cpp
-// };
-
-List::List() {
-    head = nullptr;
-    size = 0;
-}
+List::List() : head(nullptr), size(0) {}
 
 List::~List() {
-    Node* current = head;
-
-    while (current->next != nullptr) {
+    Node *current = head;
+    while (current != nullptr) {
+        Node *next = current->next;
         delete current;
-        current = current->next;
+        current = next;
     }
 }
 
 void List::push_front(const std::string &s) {
-    
-    // if head doesn't exist
-    if (head == nullptr) {
-        Node* node = new Node;
-        node->string = s;
-        node->number = 0;
-        node->next = nullptr;
-
-        head = node;
-        return;
-    }
-
-    Node* current = head;
-
-    while (head->next != nullptr) {
-        current = current->next;
-    }
-
-    Node* node = new Node;
+    Node *node = new Node;
     node->string = s;
-    node->number = 0;
-
-    current->next = node;
+    node->number = stoi(s);
+    node->next = head;
+    head = node;
     size += 1;
 }
+
