@@ -22,10 +22,13 @@ Node *concatenate(Node *left, Node *right);
 // Implementations
 
 // quick_sort(List &l, bool numeric): wrapper. l.head = qsort(l.head, compare)
+// quick_sort(List &l, bool numeric): wrapper. l.head = qsort(l.head, compare)
 void quick_sort(List &l, bool numeric) {
     l.head = qsort(l.head, numeric);
 }
 
+// qsort(head, compare): base case is when the head is the nullptr or head->next is the nullptr - otherwise pivot = head,
+// partition the rest, recurse on the left/right, then concatenate on your left_sorted and the pivot_plus_right_sorted
 // qsort(head, compare): base case is when the head is the nullptr or head->next is the nullptr - otherwise pivot = head,
 // partition the rest, recurse on the left/right, then concatenate on your left_sorted and the pivot_plus_right_sorted
 Node *qsort(Node *head, bool numeric) {
@@ -59,14 +62,14 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
     while (current != nullptr) {
         Node *next = current->next; // save before relinking, or we lose the rest of the list
 
-        bool belongsRight = numeric ? node_number_compare(current, pivot) : node_string_compare(current, pivot);
+        bool belongsLeft = numeric ? node_number_compare(current, pivot) : node_string_compare(current, pivot);
 
-        if (belongsRight) {
-            current->next = right;
-            right = current;
-        } else {
+        if (belongsLeft) {
             current->next = left;
             left = current;
+        } else {
+            current->next = right;
+            right = current;
         }
 
         current = next;
@@ -90,4 +93,3 @@ Node *concatenate(Node *left, Node *right) {
 
     return left;
 }
-
