@@ -5,29 +5,6 @@
 #include <iostream>
 #include <string>
 
-bool node_number_compare(const Node *a, const Node *b) {
-    // true for Node a, false for Node b
-
-    if (a->number >= b->number) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-bool node_string_compare(const Node *a, const Node *b) {
-    int num_a = stoi(a->string);
-    int num_b = stoi(b->string);
-
-    // true for Node a, false for Node b
-    if (num_a >= num_b) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
 
 // quick: custom quicksort - first element as pivot, relink nodes
 //     1. quick_sort(LIst &l, bool numeric): wrapper. l.head = qsort(l.head, compare)
