@@ -20,3 +20,18 @@
 | QUICK |  1000000 |        1.56s |   64.50 MB |
 | QUICK | 10000000 |       17.31s |  610.90 MB |
 | QUICK | 25000000 |       43.55s | 1529.40 MB |
+
+
+After you have performed your benchmark:
+
+1) Discuss the relative performance of each sorting method and try to explain the differences.
+
+2) What do these results reveal about the relationship between theoretical complexity discussed in class and actual performance?
+
+3) In your opinion, which sorting mode is the best? Justify your conclusion by examining the trade-offs for the chosen mode.
+
+A brief summary of each group member's contributions to the project:
+
+Andrew:
+Joy:
+Parker: Updated and completed the STL & QSort template using help from Maggie in lab, and the C++ references that were listed on the lab writeup. Testing the compilation, and timing the algorithms using usr/bin/time, and creating the test files with benchmark.cpp.
