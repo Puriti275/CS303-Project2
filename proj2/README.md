@@ -29,7 +29,8 @@ After you have performed your benchmark:
 2) What do these results reveal about the relationship between theoretical complexity discussed in class and actual performance?
 
 3) In your opinion, which sorting mode is the best? Justify your conclusion by examining the trade-offs for the chosen mode.
-    The sorting mode that's the best in my opinion is merge sort because it had the lowest amount of memory utilization as well as the second fastest time for large data (25M integers). Although QSort beat its time by 1.5 seconds, it also utilized 400MB more of memory! When this is scaled to large data for a workplace, it can cause the sorting algorithm to be useless due to hardware constraints.
+
+   The sorting mode that's the best in my opinion is merge sort because it had the lowest amount of memory utilization as well as the second fastest time for large data (25M integers). Although QSort beat its time by 1.5 seconds, it also utilized 400MB more of memory! When this is scaled to large data for a workplace, it can cause the sorting algorithm to be useless due to hardware constraints.
    - Parker Myers
 
 A brief summary of each group member's contributions to the project:
