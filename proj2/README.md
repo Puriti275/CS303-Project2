@@ -28,6 +28,9 @@ After you have performed your benchmark:
 
 2) What do these results reveal about the relationship between the theoretical complexity discussed in class and actual performance?
 
+   The results of the benchmark show that Big-O does accurately predict / represent growth rates as the runtime scales of all implementations very closely match the theoretical growth factor of O (n log n) with larger datasets.
+   - Joy Showers 
+
 3) In your opinion, which sorting mode is the best? Justify your conclusion by examining the trade-offs for the chosen mode.
 
    The sorting mode that's the best in my opinion is merge sort because it has the lowest amount of memory utilization, as well as the second fastest time for large data (25M integers). Although QSort beat its time by 1.5 seconds, it also utilized 400MB more of memory! When this is scaled to large data for a workplace, it can cause the sorting algorithm to be useless due to hardware constraints.
@@ -37,6 +40,6 @@ A brief summary of each group member's contributions to the project:
 
 Andrew:
 
-Joy:
+Joy: Completed the Merge Sort implementation, and assisted with addressing errors in debugging.
 
 Parker: Updated and completed the STL & QSort template using help from Maggie in lab, and the C++ references that were listed on the lab writeup. Testing the compilation, and timing the algorithms using usr/bin/time, and creating the test files with benchmark.cpp.
