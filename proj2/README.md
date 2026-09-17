@@ -38,7 +38,7 @@ After you have performed your benchmark:
 
 A brief summary of each group member's contributions to the project:
 
-Andrew:
+Andrew: Completed quick sort implementation, wrote initial code for compare functions and List class implementation. 
 
 Joy: Completed the Merge Sort implementation, and assisted with addressing errors in debugging.
 
