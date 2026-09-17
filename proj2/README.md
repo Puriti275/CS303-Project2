@@ -26,12 +26,15 @@ After you have performed your benchmark:
 
 1) Discuss the relative performance of each sorting method and try to explain the differences.
 
-2) What do these results reveal about the relationship between the theoretical complexity discussed in class and actual performance?
+   STL sort's heapsort fallback and O(n logn) average & worst helps it become very fast. Qsort's highly optimized quick sort also helps it become the fastest here. Merge sort's consistent O(n log n) trading off for time makes sense. Quick sort depends on the pivot you pick each time, and sometimes your pivot isn't always ideal, making it the longest for this part.
+   - Andrew
+
+3) What do these results reveal about the relationship between the theoretical complexity discussed in class and actual performance?
 
    The results of the benchmark show that Big-O does accurately predict / represent growth rates as the runtime scales of all implementations very closely match the theoretical growth factor of O (n log n) with larger datasets.
    - Joy Showers 
 
-3) In your opinion, which sorting mode is the best? Justify your conclusion by examining the trade-offs for the chosen mode.
+4) In your opinion, which sorting mode is the best? Justify your conclusion by examining the trade-offs for the chosen mode.
 
    The sorting mode that's the best in my opinion is merge sort because it has the lowest amount of memory utilization, as well as the second fastest time for large data (25M integers). Although QSort beat its time by 1.5 seconds, it also utilized 400MB more of memory! When this is scaled to large data for a workplace, it can cause the sorting algorithm to be useless due to hardware constraints.
    - Parker Myers
