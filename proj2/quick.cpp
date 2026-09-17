@@ -33,13 +33,47 @@ void quick_sort(List &l, bool numeric) {
 // partition the rest, recurse on the left/right, then concatenate on your left_sorted and the pivot_plus_right_sorted
 Node *qsort(Node *head, bool numeric) {
     if (head == nullptr || head->next == nullptr) {
-        return head; // idk what to do
+        return head;
     }
-    
+
+    // find the middle node via slow/fast pointers, and the last node
+    Node *slow = head;
+    Node *fast = head;
+    while (fast->next != nullptr && fast->next->next != nullptr) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    Node *mid  = slow;
+    Node *last = (fast->next != nullptr) ? fast->next : fast;
+
+    // pull out the three candidate values
+    auto lessThan = [&](Node *a, Node *b) {
+        return numeric ? (a->number < b->number) : (a->string < b->string);
+    };
+
+    // find which of head/mid/last is the median, then swap its data into head
+    Node *medianNode;
+    if (lessThan(head, mid) != lessThan(head, last)) {
+        medianNode = head; // head is between the other two
+    } else if (lessThan(mid, head) != lessThan(mid, last)) {
+        medianNode = mid;
+    } else {
+        medianNode = last;
+    }
+
+    if (medianNode != head) {
+        std::string tmpString = head->string;
+        int         tmpNumber = head->number;
+        head->string = medianNode->string;
+        head->number = medianNode->number;
+        medianNode->string = tmpString;
+        medianNode->number = tmpNumber;
+    }
+
     Node* pivot = head;
     Node* rest = head->next;
     pivot->next = nullptr;
-        
+
     Node* left = nullptr;
     Node* right = nullptr;
     partition(rest, pivot, left, right, numeric);
