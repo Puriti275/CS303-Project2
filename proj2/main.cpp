@@ -1,5 +1,13 @@
-// main.cpp
+/* Name: Andrew Ellis, Joy Showers, Parker Myers
+*  Project 2: Sorting List-Based Strings and Numbers
+*  Description: This project is used as a command-line tool that takes a sorting algorithm and a file that includes data, 
+and sorts the data with that algorithm. STL sort works by first creating a vector of all our nodes, and then using std::sort
+on them, and then once the nodes are repointed to the correct ones, the head of the list is set to the front of our vector! Qsort works
+very similarly, but the part that differed was us having to use the example code for the int comparison to then make sure it would
+also compare strings properly, then implementing those into qsort. 
+*/
 
+// main.cpp
 #include "volsort.h"
 
 #include <iostream>
