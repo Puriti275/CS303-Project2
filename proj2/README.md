@@ -33,5 +33,7 @@ After you have performed your benchmark:
 A brief summary of each group member's contributions to the project:
 
 Andrew:
+
 Joy:
+
 Parker: Updated and completed the STL & QSort template using help from Maggie in lab, and the C++ references that were listed on the lab writeup. Testing the compilation, and timing the algorithms using usr/bin/time, and creating the test files with benchmark.cpp.
